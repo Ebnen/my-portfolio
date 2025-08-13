@@ -9,6 +9,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  /** @type {import('next').NextConfig} */
+
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production'
+  }
 }
+
 
 export default nextConfig

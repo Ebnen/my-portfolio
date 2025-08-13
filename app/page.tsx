@@ -116,67 +116,287 @@ const customStyles = `
   }
 
   /* Enhanced responsive design */
-  @media (max-width: 640px) {
+  
+  /* Base grid layouts */
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Extra small devices (phones, 480px and down) */
+  @media (max-width: 480px) {
     .glass-card {
-      margin: 0 1rem;
+      margin: 0 0.5rem;
+      padding: 1rem !important;
     }
     
     .animate-typewriter {
-      font-size: 2rem !important;
+      font-size: 1.8rem !important;
+      line-height: 1.2 !important;
+      border-right-width: 1px !important;
     }
     
     .hero-stats {
       flex-direction: column;
       gap: 0.5rem;
+      padding: 0 1rem;
     }
     
     .hero-stats .glass-card {
-      min-width: 120px;
+      min-width: 100px;
+      padding: 0.75rem !important;
+    }
+    
+    .skills-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem;
+    }
+    
+    .contact-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem;
+    }
+    
+    /* Navigation improvements */
+    .nav-brand {
+      font-size: 1.25rem !important;
+    }
+    
+    /* Hero section improvements */
+    .hero-avatar {
+      width: 5rem !important;
+      height: 5rem !important;
+    }
+    
+    .hero-title {
+      font-size: 1.8rem !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    
+    .hero-description {
+      font-size: 0.95rem !important;
+      margin-bottom: 1.5rem !important;
+      padding: 0 0.5rem;
+    }
+    
+    /* Button improvements */
+    .hero-buttons {
+      flex-direction: column !important;
+      width: 100%;
+      padding: 0 1rem;
+    }
+    
+    .hero-buttons button,
+    .hero-buttons a {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+    
+    /* Social links */
+    .hero-social {
+      gap: 1.5rem !important;
+    }
+    
+    /* About section */
+    .about-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+    
+    .about-stats {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 0.75rem !important;
+    }
+    
+    .about-stats .glass-card {
+      padding: 1rem !important;
+    }
+    
+    /* Project cards */
+    .project-card-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+    }
+    
+    .project-image {
+      height: 200px !important;
+    }
+    
+    .project-tech {
+      gap: 0.25rem !important;
+    }
+    
+    .project-tech span {
+      font-size: 0.7rem !important;
+      padding: 0.25rem 0.5rem !important;
+    }
+    
+    .project-buttons {
+      flex-direction: column !important;
+      gap: 0.5rem !important;
+    }
+    
+    .project-buttons a {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+    
+    /* Experience and Education cards */
+    .experience-card,
+    .education-card {
+      padding: 1rem !important;
+    }
+    
+    .experience-header,
+    .education-header {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 0.5rem !important;
+    }
+    
+    .experience-badge,
+    .education-badge {
+      align-self: flex-start !important;
     }
   }
 
+  /* Small devices (tablets, 641px to 768px) */
   @media (max-width: 768px) {
+    .glass-card {
+      margin: 0 0.75rem;
+      padding: 1.5rem !important;
+    }
+    
+    .animate-typewriter {
+      font-size: 2.25rem !important;
+    }
+    
+    .hero-stats {
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    
     .skills-grid {
       grid-template-columns: 1fr !important;
+      gap: 1.25rem;
     }
     
     .project-grid {
-      grid-template-columns: 1fr !important;
+      gap: 2rem;
     }
     
     .contact-grid {
       grid-template-columns: repeat(2, 1fr) !important;
+      gap: 1rem;
+    }
+    
+    .about-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2.5rem !important;
+    }
+    
+    .project-card-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+    
+    .hero-buttons {
+      gap: 0.75rem !important;
+    }
+    
+    .nav-desktop {
+      display: none !important;
     }
   }
 
+  /* Medium devices (small laptops, 769px to 1024px) */
   @media (max-width: 1024px) {
     .contact-grid {
       grid-template-columns: repeat(3, 1fr) !important;
     }
+    
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .project-card-grid {
+      grid-template-columns: 1fr !important;
+    }
   }
 
-  .hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+  /* Large devices (laptops/desktops, 1025px to 1200px) */
+  @media (min-width: 1025px) and (max-width: 1200px) {
+    .skills-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .contact-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+  /* Extra large devices (large laptops and desktops, 1201px and up) */
+  @media (min-width: 1201px) {
+    .skills-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .contact-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 
-  .project-grid {
-    display: grid;
-    gap: 3rem;
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
+  /* Landscape phone orientation */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+      padding-top: 5rem !important;
+      padding-bottom: 2rem !important;
+    }
+    
+    .hero-avatar {
+      width: 4rem !important;
+      height: 4rem !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .hero-title {
+      font-size: 2rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .hero-description {
+      font-size: 0.9rem !important;
+      margin-bottom: 1rem !important;
+    }
   }
 `
 
@@ -356,12 +576,12 @@ export default function Portfolio() {
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full glass-nav z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="text-2xl font-bold text-white text-shadow">Ebenezer Osigwe</div>
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="flex justify-between items-center py-3 sm:py-4">
+            <div className="nav-brand text-xl sm:text-2xl font-bold text-white text-shadow">Ebenezer Osigwe</div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="nav-desktop hidden lg:flex space-x-6 xl:space-x-8">
               {["Home", "About", "Projects", "Experience", "Skills", "Education", "Contact"].map((item) => (
                 <button
                   key={item}
@@ -376,30 +596,36 @@ export default function Portfolio() {
             </div>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <button className="lg:hidden text-white p-1" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-white/10">
-              {["Home", "About", "Projects", "Experience", "Skills", "Education", "Contact"].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block w-full text-left py-2 text-sm font-medium text-white hover:text-[#FF6B35] text-shadow"
-                >
-                  {item}
-                </button>
-              ))}
+            <div className="lg:hidden py-3 sm:py-4 border-t border-white/10">
+              <div className="flex flex-col space-y-2">
+                {["Home", "About", "Projects", "Experience", "Skills", "Education", "Contact"].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item.toLowerCase())}
+                    className={`text-left py-2 px-2 text-sm font-medium transition-colors text-shadow rounded ${
+                      activeSection === item.toLowerCase() 
+                        ? "text-[#FF6B35] bg-[#FF6B35]/10" 
+                        : "text-white hover:text-[#FF6B35] hover:bg-white/5"
+                    }`}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
             </div>
           )}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+      <section id="home" className="hero-section relative pt-16 sm:pt-20 pb-12 sm:pb-16 px-3 sm:px-4 lg:px-8 min-h-screen flex items-center">
         {/* Video Background */}
         <div className="absolute inset-0 overflow-hidden">
           <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
@@ -408,62 +634,64 @@ export default function Portfolio() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto z-10">
+        <div className="relative max-w-7xl mx-auto z-10 w-full">
           <div className="text-center animate-fadeInUp">
-            <Avatar className="w-32 h-32 mx-auto mb-8 border-4 border-[#FF6B35] shadow-xl animate-float hover:scale-110 transition-transform duration-300">
-              <AvatarImage src="/placeholder.svg?height=128&width=128" />
-              <AvatarFallback className="text-2xl font-bold bg-[#FF6B35] text-white">EO</AvatarFallback>
+            <Avatar className="hero-avatar w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto mb-6 sm:mb-8 border-2 sm:border-4 border-[#FF6B35] shadow-xl animate-float hover:scale-110 transition-transform duration-300">
+              <AvatarImage src="/images/displaypic.jpg?height=128&width=128" />
+              <AvatarFallback className="text-lg sm:text-xl md:text-2xl font-bold bg-[#FF6B35] text-white">EO</AvatarFallback>
             </Avatar>
 
-            <div className="overflow-hidden">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-typewriter text-shadow">
+            <div className="overflow-hidden mb-3 sm:mb-4">
+              <h1 className="hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white animate-typewriter text-shadow leading-tight">
                 Ebenezer Ezechimere Osigwe
               </h1>
             </div>
-            <p className="text-xl md:text-2xl text-white mb-8 animate-fadeInUp delay-500 text-shadow">
+            <p className="hero-subtitle text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-6 sm:mb-8 animate-fadeInUp delay-500 text-shadow">
               Full-Stack Software Engineer
             </p>
-            <p className="text-lg text-white max-w-3xl mx-auto mb-8 animate-fadeInUp delay-700 text-shadow">
+            <p className="hero-description text-sm sm:text-base lg:text-lg text-white max-w-2xl lg:max-w-3xl mx-auto mb-6 sm:mb-8 animate-fadeInUp delay-700 text-shadow leading-relaxed px-2 sm:px-0">
               Passionate about building innovative, user-friendly, and scalable software solutions. With 3+ years of
               experience in both frontend and backend development, I create impactful digital experiences that make a
               difference.
             </p>
 
             {/* Real Visitor Stats */}
-            <VisitorStats />
+            <div className="mb-6 sm:mb-8">
+              <VisitorStats />
+            </div>
 
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <button className="orange-button px-6 py-3 font-medium flex items-center gap-2">
-                <Download className="h-4 w-4" />
+            <div className="hero-buttons flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 px-2 sm:px-0">
+              <button className="orange-button px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium flex items-center justify-center gap-2 min-w-[160px] sm:min-w-auto">
+                <Download className="h-3 w-3 sm:h-4 sm:w-4" />
                 Download Resume
               </button>
               <button
-                className="orange-outline-button px-6 py-3 font-medium"
+                className="orange-outline-button px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium min-w-[160px] sm:min-w-auto"
                 onClick={() => scrollToSection("contact")}
               >
                 Get In Touch
               </button>
             </div>
 
-            <div className="flex justify-center space-x-6">
+            <div className="hero-social flex justify-center space-x-4 sm:space-x-6">
               <a
                 href="https://github.com/Ebnen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#FF6B35] transition-colors"
+                className="text-white hover:text-[#FF6B35] transition-colors p-1"
               >
-                <Github className="h-6 w-6" />
+                <Github className="h-5 w-5 sm:h-6 sm:w-6" />
               </a>
               <a
                 href="https://www.linkedin.com/in/ebenzy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#FF6B35] transition-colors"
+                className="text-white hover:text-[#FF6B35] transition-colors p-1"
               >
-                <Linkedin className="h-6 w-6" />
+                <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
               </a>
-              <a href="mailto:ebenzy1996@gmail.com" className="text-white hover:text-[#FF6B35] transition-colors">
-                <Mail className="h-6 w-6" />
+              <a href="mailto:ebenzy1996@gmail.com" className="text-white hover:text-[#FF6B35] transition-colors p-1">
+                <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
               </a>
             </div>
           </div>
@@ -471,48 +699,48 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto glass-card rounded-2xl shadow-2xl p-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 text-shadow">About Me</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-lg text-white mb-6 text-shadow">
+      <section id="about" className="py-12 sm:py-16 px-3 sm:px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto glass-card rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-white mb-8 sm:mb-12 text-shadow">About Me</h2>
+          <div className="about-grid grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6">
+              <p className="text-sm sm:text-base lg:text-lg text-white text-shadow leading-relaxed">
                 I'm a dedicated full-stack developer with a unique background in law and technology. My journey from
                 legal studies to software engineering has given me a distinctive perspective on problem-solving and
                 attention to detail.
               </p>
-              <p className="text-lg text-white mb-6 text-shadow">
+              <p className="text-sm sm:text-base lg:text-lg text-white text-shadow leading-relaxed">
                 Currently pursuing my BSc in Software Engineering while gaining hands-on experience through internships
                 and volunteer work. I specialize in building scalable web applications using modern technologies like
                 React, Node.js, and various databases.
               </p>
-              <div className="flex items-center space-x-4 text-white">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0 text-white">
                 <div className="flex items-center">
-                  <MapPin className="h-4 w-4 mr-1 text-[#FF6B35]" />
-                  <span className="text-shadow">Abuja, Nigeria</span>
+                  <MapPin className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 text-[#FF6B35] flex-shrink-0" />
+                  <span className="text-shadow text-sm sm:text-base">Abuja, Nigeria</span>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="h-4 w-4 mr-1 text-[#FF6B35]" />
-                  <span className="text-shadow">+234 802 095 3079</span>
+                  <Phone className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 text-[#FF6B35] flex-shrink-0" />
+                  <span className="text-shadow text-sm sm:text-base">+234 802 095 3079</span>
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass-card rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-[#FF6B35] mb-2">3+</div>
-                <div className="text-sm text-white text-shadow">Years Experience</div>
+            <div className="about-stats grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="glass-card rounded-lg p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#FF6B35] mb-1 sm:mb-2">3+</div>
+                <div className="text-xs sm:text-sm text-white text-shadow">Years Experience</div>
               </div>
-              <div className="glass-card rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-[#FF6B35] mb-2">15+</div>
-                <div className="text-sm text-white text-shadow">Technologies</div>
+              <div className="glass-card rounded-lg p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#FF6B35] mb-1 sm:mb-2">15+</div>
+                <div className="text-xs sm:text-sm text-white text-shadow">Technologies</div>
               </div>
-              <div className="glass-card rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-[#FF6B35] mb-2">10+</div>
-                <div className="text-sm text-white text-shadow">Projects</div>
+              <div className="glass-card rounded-lg p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#FF6B35] mb-1 sm:mb-2">10+</div>
+                <div className="text-xs sm:text-sm text-white text-shadow">Projects</div>
               </div>
-              <div className="glass-card rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-[#FF6B35] mb-2">3</div>
-                <div className="text-sm text-white text-shadow">Companies</div>
+              <div className="glass-card rounded-lg p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#FF6B35] mb-1 sm:mb-2">3</div>
+                <div className="text-xs sm:text-sm text-white text-shadow">Companies</div>
               </div>
             </div>
           </div>
@@ -520,29 +748,29 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto glass-card rounded-2xl shadow-2xl p-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 text-shadow">Featured Projects</h2>
-          <div className="space-y-12">
+      <section id="projects" className="py-12 sm:py-16 px-3 sm:px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto glass-card rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-white mb-8 sm:mb-12 text-shadow">Featured Projects</h2>
+          <div className="space-y-8 sm:space-y-12">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="glass-card rounded-lg sm:rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
               >
-                <div className={`grid md:grid-cols-2 gap-8 p-6 ${index % 2 === 1 ? "md:grid-flow-col-dense" : ""}`}>
-                  <div className={`${index % 2 === 1 ? "md:col-start-2" : ""}`}>
+                <div className={`project-card-grid grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 p-4 sm:p-6 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}>
+                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                     <img
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
-                      className="w-full h-64 object-cover rounded-lg border border-[#FF6B35]/20"
+                      className="project-image w-full h-48 sm:h-56 lg:h-64 object-cover rounded-md lg:rounded-lg border border-[#FF6B35]/20"
                     />
                   </div>
-                  <div className={`flex flex-col justify-center ${index % 2 === 1 ? "md:col-start-1" : ""}`}>
-                    <div className="mb-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-2xl font-bold text-white text-shadow">{project.title}</h3>
+                  <div className={`flex flex-col justify-center ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                    <div className="mb-3 sm:mb-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white text-shadow">{project.title}</h3>
                         <span
-                          className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          className={`self-start px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${
                             project.status === "Live"
                               ? "bg-[#FF6B35] text-white"
                               : project.status === "In Production"
@@ -553,28 +781,28 @@ export default function Portfolio() {
                           {project.status}
                         </span>
                       </div>
-                      <p className="text-white text-base leading-relaxed mb-4 text-shadow">{project.description}</p>
+                      <p className="text-white text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 text-shadow">{project.description}</p>
                     </div>
 
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-white mb-2 text-shadow">Key Features:</h4>
+                    <div className="mb-3 sm:mb-4">
+                      <h4 className="font-semibold text-white mb-2 text-shadow text-sm sm:text-base">Key Features:</h4>
                       <ul className="space-y-1">
                         {project.features.slice(0, 3).map((feature, i) => (
-                          <li key={i} className="flex items-start text-sm text-white text-shadow">
-                            <div className="w-1.5 h-1.5 bg-[#FF6B35] rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                          <li key={i} className="flex items-start text-xs sm:text-sm text-white text-shadow">
+                            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-[#FF6B35] rounded-full mt-1.5 sm:mt-2 mr-2 flex-shrink-0"></div>
                             {feature}
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-white mb-2 text-shadow">Technologies:</h4>
-                      <div className="flex flex-wrap gap-2">
+                    <div className="mb-4 sm:mb-6">
+                      <h4 className="font-semibold text-white mb-2 text-shadow text-sm sm:text-base">Technologies:</h4>
+                      <div className="project-tech flex flex-wrap gap-1 sm:gap-2">
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 py-1 text-xs bg-[#FF6B35]/20 text-[#FF6B35] border border-[#FF6B35]/30 rounded"
+                            className="px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs bg-[#FF6B35]/20 text-[#FF6B35] border border-[#FF6B35]/30 rounded"
                           >
                             {tech}
                           </span>
@@ -582,12 +810,12 @@ export default function Portfolio() {
                       </div>
                     </div>
 
-                    <div className="flex gap-4">
+                    <div className="project-buttons flex flex-col sm:flex-row gap-2 sm:gap-4">
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="orange-button px-4 py-2 text-sm font-medium inline-block text-center"
+                        className="orange-button px-3 sm:px-4 py-2 text-sm font-medium inline-block text-center"
                       >
                         View Live
                       </a>
@@ -595,9 +823,9 @@ export default function Portfolio() {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="orange-outline-button px-4 py-2 text-sm font-medium inline-flex items-center gap-2"
+                        className="orange-outline-button px-3 sm:px-4 py-2 text-sm font-medium inline-flex items-center justify-center gap-2"
                       >
-                        <Github className="h-4 w-4" />
+                        <Github className="h-3 w-3 sm:h-4 sm:w-4" />
                         Code
                       </a>
                     </div>
@@ -610,28 +838,28 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto glass-card rounded-2xl shadow-2xl p-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 text-shadow">Experience</h2>
-          <div className="space-y-8">
+      <section id="experience" className="py-12 sm:py-16 px-3 sm:px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto glass-card rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-white mb-8 sm:mb-12 text-shadow">Experience</h2>
+          <div className="space-y-6 sm:space-y-8">
             {experiences.map((exp, index) => (
-              <div key={index} className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-[#FF6B35] text-shadow">{exp.position}</h3>
-                    <p className="text-lg font-medium text-white mt-1 text-shadow">
+              <div key={index} className="experience-card glass-card rounded-lg sm:rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow">
+                <div className="experience-header flex flex-col lg:flex-row lg:justify-between lg:items-start mb-3 sm:mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#FF6B35] text-shadow">{exp.position}</h3>
+                    <p className="text-base sm:text-lg font-medium text-white mt-1 text-shadow">
                       {exp.company} • {exp.location}
                     </p>
                   </div>
-                  <span className="mt-2 md:mt-0 px-3 py-1 bg-[#FF6B35]/20 text-[#FF6B35] border border-[#FF6B35]/30 rounded text-sm">
+                  <span className="experience-badge mt-2 lg:mt-0 px-2 sm:px-3 py-1 bg-[#FF6B35]/20 text-[#FF6B35] border border-[#FF6B35]/30 rounded text-xs sm:text-sm self-start">
                     {exp.period}
                   </span>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 sm:space-y-2">
                   {exp.achievements.map((achievement, i) => (
                     <li key={i} className="flex items-start">
-                      <div className="w-2 h-2 bg-[#FF6B35] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-white text-shadow">{achievement}</span>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF6B35] rounded-full mt-1.5 sm:mt-2 mr-2 sm:mr-3 flex-shrink-0"></div>
+                      <span className="text-white text-shadow text-sm sm:text-base leading-relaxed">{achievement}</span>
                     </li>
                   ))}
                 </ul>
@@ -642,66 +870,66 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto glass-card rounded-2xl shadow-2xl p-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 text-shadow">
+      <section id="skills" className="py-12 sm:py-16 px-3 sm:px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto glass-card rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-white mb-8 sm:mb-12 text-shadow">
             Skills & Technologies
           </h2>
           <div className="skills-grid">
-            <div className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow text-center">
-              <Code className="h-12 w-12 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="font-semibold text-white mb-4 text-shadow">Frontend</h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+            <div className="glass-card rounded-lg sm:rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow text-center">
+              <Code className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-[#FF6B35] mx-auto mb-3 sm:mb-4" />
+              <h3 className="font-semibold text-white mb-3 sm:mb-4 text-shadow text-sm sm:text-base">Frontend</h3>
+              <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
                 {skills.frontend.map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs bg-white/10 text-white rounded border border-white/20">
+                  <span key={skill} className="px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs bg-white/10 text-white rounded border border-white/20">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow text-center">
-              <Server className="h-12 w-12 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="font-semibold text-white mb-4 text-shadow">Backend</h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+            <div className="glass-card rounded-lg sm:rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow text-center">
+              <Server className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-[#FF6B35] mx-auto mb-3 sm:mb-4" />
+              <h3 className="font-semibold text-white mb-3 sm:mb-4 text-shadow text-sm sm:text-base">Backend</h3>
+              <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
                 {skills.backend.map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs bg-white/10 text-white rounded border border-white/20">
+                  <span key={skill} className="px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs bg-white/10 text-white rounded border border-white/20">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow text-center">
-              <Smartphone className="h-12 w-12 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="font-semibold text-white mb-4 text-shadow">Mobile</h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+            <div className="glass-card rounded-lg sm:rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow text-center">
+              <Smartphone className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-[#FF6B35] mx-auto mb-3 sm:mb-4" />
+              <h3 className="font-semibold text-white mb-3 sm:mb-4 text-shadow text-sm sm:text-base">Mobile</h3>
+              <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
                 {skills.mobile.map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs bg-white/10 text-white rounded border border-white/20">
+                  <span key={skill} className="px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs bg-white/10 text-white rounded border border-white/20">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow text-center">
-              <Database className="h-12 w-12 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="font-semibold text-white mb-4 text-shadow">Database</h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+            <div className="glass-card rounded-lg sm:rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow text-center">
+              <Database className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-[#FF6B35] mx-auto mb-3 sm:mb-4" />
+              <h3 className="font-semibold text-white mb-3 sm:mb-4 text-shadow text-sm sm:text-base">Database</h3>
+              <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
                 {skills.database.map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs bg-white/10 text-white rounded border border-white/20">
+                  <span key={skill} className="px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs bg-white/10 text-white rounded border border-white/20">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow text-center">
-              <Tool className="h-12 w-12 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="font-semibold text-white mb-4 text-shadow">Tools & Others</h3>
-              <div className="flex flex-wrap gap-2 justify-center">
+            <div className="glass-card rounded-lg sm:rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow text-center">
+              <Tool className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-[#FF6B35] mx-auto mb-3 sm:mb-4" />
+              <h3 className="font-semibold text-white mb-3 sm:mb-4 text-shadow text-sm sm:text-base">Tools & Others</h3>
+              <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
                 {skills.tools.map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs bg-white/10 text-white rounded border border-white/20">
+                  <span key={skill} className="px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs bg-white/10 text-white rounded border border-white/20">
                     {skill}
                   </span>
                 ))}
@@ -712,21 +940,21 @@ export default function Portfolio() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto glass-card rounded-2xl shadow-2xl p-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 text-shadow">Education</h2>
-          <div className="space-y-6">
+      <section id="education" className="py-12 sm:py-16 px-3 sm:px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto glass-card rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-white mb-8 sm:mb-12 text-shadow">Education</h2>
+          <div className="space-y-4 sm:space-y-6">
             {education.map((edu, index) => (
-              <div key={index} className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start">
+              <div key={index} className="education-card glass-card rounded-lg sm:rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow">
+                <div className="education-header flex flex-col lg:flex-row lg:justify-between lg:items-start">
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-2 text-shadow">{edu.degree}</h3>
-                    <p className="text-lg text-[#FF6B35] font-medium mb-1">{edu.institution}</p>
-                    <p className="text-white text-shadow">{edu.location}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-1 sm:mb-2 text-shadow">{edu.degree}</h3>
+                    <p className="text-base sm:text-lg text-[#FF6B35] font-medium mb-1">{edu.institution}</p>
+                    <p className="text-white text-shadow text-sm sm:text-base">{edu.location}</p>
                   </div>
-                  <div className="mt-4 md:mt-0 md:text-right">
+                  <div className="mt-3 lg:mt-0 lg:text-right">
                     <span
-                      className={`px-3 py-1 rounded text-xs font-medium mb-2 inline-block ${
+                      className={`education-badge px-2 sm:px-3 py-1 rounded text-xs font-medium mb-1 sm:mb-2 inline-block ${
                         edu.status === "In Progress"
                           ? "bg-[#FF6B35] text-white"
                           : "bg-[#FF6B35]/20 text-[#FF6B35] border border-[#FF6B35]"
@@ -734,7 +962,7 @@ export default function Portfolio() {
                     >
                       {edu.status}
                     </span>
-                    <p className="text-sm text-white text-shadow">{edu.period}</p>
+                    <p className="text-xs sm:text-sm text-white text-shadow">{edu.period}</p>
                   </div>
                 </div>
               </div>
@@ -744,105 +972,105 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto glass-card rounded-2xl shadow-2xl p-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-shadow">Let's Work Together</h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto text-shadow">
+      <section id="contact" className="py-12 sm:py-16 px-3 sm:px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto glass-card rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8 text-shadow">Let's Work Together</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8 max-w-xl lg:max-w-2xl mx-auto text-shadow leading-relaxed">
             I'm always interested in new opportunities and exciting projects. Let's discuss how we can bring your ideas
             to life.
           </p>
 
-          <div className="contact-grid mb-12">
-            <div className="text-center">
-              <Mail className="h-8 w-8 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2 text-shadow">Email</h3>
+          <div className="contact-grid mb-8 sm:mb-12">
+            <div className="text-center p-3 sm:p-4">
+              <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-[#FF6B35] mx-auto mb-2 sm:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2 text-shadow">Email</h3>
               <a
                 href="mailto:ebenzy1996@gmail.com"
-                className="text-white hover:text-[#FF6B35] transition-colors text-shadow"
+                className="text-white hover:text-[#FF6B35] transition-colors text-shadow text-xs sm:text-sm lg:text-base break-all"
               >
                 ebenzy1996@gmail.com
               </a>
             </div>
-            <div className="text-center">
-              <Phone className="h-8 w-8 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2 text-shadow">Phone</h3>
-              <a href="tel:+2348020953079" className="text-white hover:text-[#FF6B35] transition-colors text-shadow">
+            <div className="text-center p-3 sm:p-4">
+              <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-[#FF6B35] mx-auto mb-2 sm:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2 text-shadow">Phone</h3>
+              <a href="tel:+2348020953079" className="text-white hover:text-[#FF6B35] transition-colors text-shadow text-xs sm:text-sm lg:text-base">
                 +234 802 095 3079
               </a>
             </div>
-            <div className="text-center">
-              <MapPin className="h-8 w-8 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2 text-shadow">Location</h3>
-              <span className="text-white text-shadow">Karu/Jikwoyi, Abuja, FCT</span>
+            <div className="text-center p-3 sm:p-4">
+              <MapPin className="h-6 w-6 sm:h-8 sm:w-8 text-[#FF6B35] mx-auto mb-2 sm:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2 text-shadow">Location</h3>
+              <span className="text-white text-shadow text-xs sm:text-sm lg:text-base">Karu/Jikwoyi, Abuja, FCT</span>
             </div>
-            <div className="text-center">
-              <MessageCircle className="h-8 w-8 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2 text-shadow">WhatsApp</h3>
+            <div className="text-center p-3 sm:p-4">
+              <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8 text-[#FF6B35] mx-auto mb-2 sm:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2 text-shadow">WhatsApp</h3>
               <a
                 href="https://wa.me/2348020953079"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#FF6B35] transition-colors text-shadow"
+                className="text-white hover:text-[#FF6B35] transition-colors text-shadow text-xs sm:text-sm lg:text-base"
               >
                 Chat on WhatsApp
               </a>
             </div>
-            <div className="text-center">
-              <Twitter className="h-8 w-8 text-[#FF6B35] mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2 text-shadow">Twitter</h3>
+            <div className="text-center p-3 sm:p-4">
+              <Twitter className="h-6 w-6 sm:h-8 sm:w-8 text-[#FF6B35] mx-auto mb-2 sm:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2 text-shadow">Twitter</h3>
               <a
                 href="https://twitter.com/ebenzy1996"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#FF6B35] transition-colors text-shadow"
+                className="text-white hover:text-[#FF6B35] transition-colors text-shadow text-xs sm:text-sm lg:text-base"
               >
                 @ebenzy1996
               </a>
             </div>
           </div>
 
-          <div className="flex justify-center space-x-4 flex-wrap gap-4">
+          <div className="flex justify-center space-x-2 sm:space-x-4 flex-wrap gap-2 sm:gap-4">
             <a
               href="https://github.com/Ebnen"
               target="_blank"
               rel="noopener noreferrer"
-              className="orange-outline-button px-4 py-2 text-sm font-medium inline-flex items-center gap-2"
+              className="orange-outline-button px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium inline-flex items-center gap-1 sm:gap-2"
             >
-              <Github className="h-4 w-4" />
+              <Github className="h-3 w-3 sm:h-4 sm:w-4" />
               GitHub
             </a>
             <a
               href="https://www.linkedin.com/in/ebenzy"
               target="_blank"
               rel="noopener noreferrer"
-              className="orange-outline-button px-4 py-2 text-sm font-medium inline-flex items-center gap-2"
+              className="orange-outline-button px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium inline-flex items-center gap-1 sm:gap-2"
             >
-              <Linkedin className="h-4 w-4" />
+              <Linkedin className="h-3 w-3 sm:h-4 sm:w-4" />
               LinkedIn
             </a>
             <a
               href="mailto:ebenzy1996@gmail.com"
-              className="orange-button px-4 py-2 text-sm font-medium inline-flex items-center gap-2"
+              className="orange-button px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium inline-flex items-center gap-1 sm:gap-2"
             >
-              <Mail className="h-4 w-4" />
+              <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
               Email Me
             </a>
             <a
               href="https://wa.me/2348020953079"
               target="_blank"
               rel="noopener noreferrer"
-              className="orange-outline-button px-4 py-2 text-sm font-medium inline-flex items-center gap-2"
+              className="orange-outline-button px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium inline-flex items-center gap-1 sm:gap-2"
             >
-              <MessageCircle className="h-4 w-4" />
+              <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
               WhatsApp
             </a>
             <a
               href="https://twitter.com/ebenzy1996"
               target="_blank"
               rel="noopener noreferrer"
-              className="orange-outline-button px-4 py-2 text-sm font-medium inline-flex items-center gap-2"
+              className="orange-outline-button px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium inline-flex items-center gap-1 sm:gap-2"
             >
-              <Twitter className="h-4 w-4" />
+              <Twitter className="h-3 w-3 sm:h-4 sm:w-4" />
               Twitter
             </a>
           </div>
@@ -850,9 +1078,9 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="glass-nav py-8 px-4 sm:px-6 lg:px-8">
+      <footer className="glass-nav py-6 sm:py-8 px-3 sm:px-4 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-white text-shadow">© 2025 Ebenezer Ezechimere Osigwe. All rights reserved.</p>
+          <p className="text-white text-shadow text-xs sm:text-sm lg:text-base">© 2025 Ebenezer Ezechimere Osigwe. All rights reserved.</p>
         </div>
       </footer>
     </div>
